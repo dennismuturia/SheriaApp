@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".BusinessActivity"></activity>
+        <activity android:name=".ListOfLaws">
+        </activity>
     </application>
 
 </manifest>
