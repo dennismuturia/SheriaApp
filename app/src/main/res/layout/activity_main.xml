@@ -1,9 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/maincolor"
     tools:context="com.sheriaapp.dennis.sheriaapp.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView6"
+        android:layout_width="168dp"
+        android:layout_height="141dp"
+
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="15dp"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/cardView3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/businessImage"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="10sp"
+                app:srcCompat="@drawable/business" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Business"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="168dp"
+        android:layout_height="141dp"
+
+        android:layout_marginRight="15dp"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_above="@+id/cardView5"
+        android:layout_alignStart="@+id/cardView4"
+        android:layout_marginBottom="50dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/landImage"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40sp"
+                app:srcCompat="@drawable/land" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Land Issues"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView9"
+        android:layout_width="168dp"
+        android:layout_height="141dp"
+        android:layout_alignBottom="@+id/cardView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="16dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="9dp"
+                android:id="@+id/imagePolice"
+                app:srcCompat="@drawable/police"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Police"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="168dp"
+        android:layout_height="141dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_alignTop="@+id/cardView4"
+        android:layout_alignStart="@+id/cardView9">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="9dp"
+                android:id="@+id/imageMarriage"
+                app:srcCompat="@drawable/marriage"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Marriages"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="168dp"
+        android:layout_height="141dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="35dp"
+        android:layout_above="@+id/cardView9"
+        android:layout_alignParentEnd="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginLeft="40sp"
+                android:id="@+id/imageEmployee"
+                app:srcCompat="@drawable/employee"
+                android:layout_marginBottom="11dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Employee Rights"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="168dp"
+        android:layout_height="141dp"
+        android:layout_marginLeft="16dp"
+        app:cardBackgroundColor="@color/transparent"
+        android:layout_alignTop="@+id/cardView3"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageCourt"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignEnd="@+id/textView2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40sp"
+                app:srcCompat="@drawable/court" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Court Process"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
