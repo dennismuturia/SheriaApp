@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.sheriaapp.dennis.sheriaapp.R;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
