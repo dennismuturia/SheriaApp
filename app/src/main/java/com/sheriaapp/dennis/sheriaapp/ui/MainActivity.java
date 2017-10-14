@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp;
+package com.sheriaapp.dennis.sheriaapp.ui;
 
 import android.content.Intent;
 import android.support.v4.view.MenuItemCompat;
@@ -8,6 +8,8 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.sheriaapp.dennis.sheriaapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
