@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".ui.ListOfLaws">
         </activity>
+        <activity android:name=".ui.ChatArea">
+        </activity>
     </application>
 
 </manifest>
