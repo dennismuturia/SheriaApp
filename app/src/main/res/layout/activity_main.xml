@@ -212,4 +212,15 @@
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chat With Bot"
+        android:id="@+id/chatWithBot"
+        android:layout_alignTop="@+id/cardView6"
+        android:layout_alignStart="@+id/cardView9"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="128dp">
+
+    </Button>
 </RelativeLayout>
