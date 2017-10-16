@@ -3,7 +3,7 @@
     android:id="@+id/licence_business"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sheriaapp.dennis.sheriaapp.ui.LicenceBusiness">
+    tools:context="com.sheriaapp.dennis.sheriaapp.ui.Business.LicenceBusiness">
 
 
 

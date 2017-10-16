@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/coordinate"
     android:fitsSystemWindows="true"
-    tools:context="com.sheriaapp.dennis.sheriaapp.ui.BusinessActivity">
+    tools:context="com.sheriaapp.dennis.sheriaapp.ui.Business.BusinessActivity">
 <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">

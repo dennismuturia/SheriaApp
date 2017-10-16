@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp.ui;
+package com.sheriaapp.dennis.sheriaapp.ui.Business;
 
 
 import android.os.Bundle;
