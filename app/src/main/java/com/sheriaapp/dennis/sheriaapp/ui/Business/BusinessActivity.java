@@ -10,7 +10,7 @@ import com.sheriaapp.dennis.sheriaapp.R;
 
 public class BusinessActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
 
-    AHBottomNavigation bottomNavigation;
+    private AHBottomNavigation bottomNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class BusinessActivity extends AppCompatActivity implements AHBottomNavig
         //creating the nav items
         AHBottomNavigationItem register = new AHBottomNavigationItem("register", R.drawable.ic_business_center_black_24dp);
         AHBottomNavigationItem licence = new AHBottomNavigationItem("licence", R.drawable.ic_assignment_black_24dp);
-        AHBottomNavigationItem soleproprietor = new AHBottomNavigationItem("sole-proprieter", R.drawable.sole_propietorship );
+        AHBottomNavigationItem soleproprietor = new AHBottomNavigationItem("sole-proprietor", R.drawable.sole_propietorship );
 
         //Adding them to the bar
         bottomNavigation.addItem(register);

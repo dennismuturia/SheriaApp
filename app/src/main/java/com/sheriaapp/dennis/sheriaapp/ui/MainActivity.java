@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.sheriaapp.dennis.sheriaapp.R;
 import com.sheriaapp.dennis.sheriaapp.ui.Business.BusinessActivity;
+import com.sheriaapp.dennis.sheriaapp.ui.Land.Land;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,12 +22,15 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.businessImage)
     ImageView myBusiness;
+    @Bind(R.id.landImage) ImageView myLand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         myBusiness.setOnClickListener(this);
+        myLand.setOnClickListener(this);
+
 
     }
 
@@ -58,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == myBusiness){
             Intent intent = new Intent(MainActivity.this, BusinessActivity.class);
+            startActivity(intent);
+        }
+        if (view==myLand){
+            Intent intent = new Intent(MainActivity.this,Land.class);
             startActivity(intent);
         }
     }
