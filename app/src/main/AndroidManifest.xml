@@ -25,7 +25,8 @@
         <activity android:name=".ui.Employees.Employee" />
         <activity android:name=".ui.Police.Police" />
         <activity android:name=".ui.Marriage.Marriage" />
-        <activity android:name=".ui.Voting.Voting"></activity>
+        <activity android:name=".ui.Voting.Voting" />
+        <activity android:name=".ui.HumanRights.HumanRights"></activity>
     </application>
 
 </manifest>

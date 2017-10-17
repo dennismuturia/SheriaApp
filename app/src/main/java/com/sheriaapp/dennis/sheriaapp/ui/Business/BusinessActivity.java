@@ -54,6 +54,9 @@ public class BusinessActivity extends AppCompatActivity implements AHBottomNavig
             LicenceBusiness licenceBusiness = new LicenceBusiness();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, licenceBusiness).commit();
         }
+        if (position==2){
+
+        }
 
 
     }
