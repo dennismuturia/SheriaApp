@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Button;
 
 import com.sheriaapp.dennis.sheriaapp.R;
 import com.sheriaapp.dennis.sheriaapp.ui.Business.BusinessActivity;
@@ -19,7 +20,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @Bind(R.id.chatWithBot)Button ChatBot;
     @Bind(R.id.businessImage)
     ImageView myBusiness;
     @Bind(R.id.landImage) ImageView myLand;
@@ -28,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         myBusiness.setOnClickListener(this);
         myLand.setOnClickListener(this);
-
-
+        ChatBot.setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view==myLand){
             Intent intent = new Intent(MainActivity.this,Land.class);
             startActivity(intent);
+        }if(view==ChatBot){
+        Intent intent = new Intent(MainActivity.this, ChatArea.class);
+        startActivity(intent);
         }
     }
 }
