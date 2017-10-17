@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp.ui;
+package com.sheriaapp.dennis.sheriaapp.sheriaap;
 
 import android.content.Intent;
 import android.os.Handler;

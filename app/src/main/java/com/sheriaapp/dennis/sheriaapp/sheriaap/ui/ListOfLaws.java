@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp.ui;
+package com.sheriaapp.dennis.sheriaapp.sheriaap;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
