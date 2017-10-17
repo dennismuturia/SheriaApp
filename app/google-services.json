@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "183960755694",
+    "firebase_url": "https://sheriahelp.firebaseio.com",
+    "project_id": "sheriahelp",
+    "storage_bucket": "sheriahelp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183960755694:android:bfc6d248361b11e4",
+        "android_client_info": {
+          "package_name": "com.sheriaapp.dennis.sheriaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183960755694-7anh13idj9r22qfqs4fhjs3ll3as042m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sheriaapp.dennis.sheriaapp",
+            "certificate_hash": "2849b1d6098c155bcaffe96d6216f3544dc10090"
+          }
+        },
+        {
+          "client_id": "183960755694-fdpek9020gjf659gqvt9pn3e5f5jkbl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0o__hROhotL7392sswEy4J0aAwhXrUFE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183960755694-fdpek9020gjf659gqvt9pn3e5f5jkbl8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

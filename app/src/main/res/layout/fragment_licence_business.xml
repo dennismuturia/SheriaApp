@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/licence_business"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sheriaapp.dennis.sheriaapp.ui.Business.LicenceBusiness">
+
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register Licence"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:id="@+id/list_licence"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+
+</RelativeLayout>

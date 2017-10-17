@@ -9,17 +9,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
 import android.widget.Button;
 
+import android.widget.ImageView;
+
 import com.sheriaapp.dennis.sheriaapp.R;
+import com.sheriaapp.dennis.sheriaapp.ui.Business.BusinessActivity;
+import com.sheriaapp.dennis.sheriaapp.ui.Land.Land;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+
+
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.chatWithBot)Button ChatBot;
-
-
+    @Bind(R.id.businessImage)
+    ImageView myBusiness;
+    @Bind(R.id.landImage) ImageView myLand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +37,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        ChatBot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ChatArea.class);
-                startActivity(intent);
-            }
-        });
+
+        ChatBot.setOnClickListener(this);
+
+        myBusiness.setOnClickListener(this);
+        myLand.setOnClickListener(this);
 
     }
 
@@ -60,4 +68,21 @@ public class MainActivity extends AppCompatActivity {
         });
         return  super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public void onClick(View view) {
+        if (view == myBusiness){
+            Intent intent = new Intent(MainActivity.this, BusinessActivity.class);
+            startActivity(intent);
+        }
+        if (view==myLand){
+            Intent intent = new Intent(MainActivity.this,Land.class);
+            startActivity(intent);
+        }
+        if (view == ChatBot){
+            Intent intent = new Intent(MainActivity.this, ChatArea.class);
+            startActivity(intent);
+        }
+    }
+
 }
