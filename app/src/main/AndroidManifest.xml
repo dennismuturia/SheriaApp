@@ -21,8 +21,6 @@
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.ListOfLaws">
         </activity>
-        <activity android:name=".ui.ChatArea">
-        </activity>
         <activity android:name=".ui.Business.BusinessActivity" />
 
         <activity android:name=".ui.Traffic.Traffic" />
