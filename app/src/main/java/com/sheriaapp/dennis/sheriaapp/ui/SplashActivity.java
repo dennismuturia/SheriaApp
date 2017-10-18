@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.sheriaapp.dennis.sheriaapp.R;
+import com.sheriaapp.dennis.sheriaapp.ui.MainActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

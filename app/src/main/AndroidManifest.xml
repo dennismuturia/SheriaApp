@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sheriaapp.dennis.sheriaapp">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,9 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity" />
+
+        <activity android:name=".ui.MainActivity">
+        </activity>
         <activity android:name=".ui.ListOfLaws">
         </activity>
+        <activity android:name=".ui.ChatArea">
+        </activity>
+
+
         <activity android:name=".ui.Business.BusinessActivity" />
 
         <activity android:name=".ui.Traffic.Traffic" />
@@ -31,6 +37,7 @@
         <activity android:name=".ui.Marriage.Marriage" />
         <activity android:name=".ui.Voting.Voting" />
         <activity android:name=".ui.HumanRights.HumanRights"></activity>
+
     </application>
 
 </manifest>

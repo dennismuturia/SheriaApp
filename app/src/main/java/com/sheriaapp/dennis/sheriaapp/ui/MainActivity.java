@@ -19,8 +19,6 @@ import com.sheriaapp.dennis.sheriaapp.ui.Land.Land;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.chatWithBot)Button ChatBot;
     @Bind(R.id.businessImage)
@@ -35,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myBusiness.setOnClickListener(this);
         myLand.setOnClickListener(this);
         ChatBot.setOnClickListener(this);
+
     }
 
     @Override
@@ -71,5 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this,Land.class);
             startActivity(intent);
         }
+        if (view == ChatBot){
+            Intent intent = new Intent(MainActivity.this, ChatArea.class);
+            startActivity(intent);
+        }
     }
+
 }
