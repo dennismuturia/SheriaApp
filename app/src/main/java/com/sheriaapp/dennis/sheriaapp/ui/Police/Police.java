@@ -15,6 +15,10 @@ public class Police extends AppCompatActivity implements AHBottomNavigation.OnTa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_police);
         bottomNavigationPolice = (AHBottomNavigation) findViewById(R.id.bottom_navigation_police);
+        if (savedInstanceState==null){
+            Arrested arrested = new Arrested();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,arrested).commit();
+        }
         bottomNavigationPolice.setOnTabSelectedListener(this);
         this.createNavItem();
     }

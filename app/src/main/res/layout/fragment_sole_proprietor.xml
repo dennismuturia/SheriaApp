@@ -1,13 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sheriaapp.dennis.sheriaapp.ui.Business.SoleProprietor">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register of A Business"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:id="@+id/textView" />
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/list_proprietor"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView">
+    </ListView>
 
-</FrameLayout>
+
+
+</RelativeLayout>

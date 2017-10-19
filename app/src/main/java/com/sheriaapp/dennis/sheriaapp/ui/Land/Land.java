@@ -15,6 +15,10 @@ public class Land extends AppCompatActivity implements AHBottomNavigation.OnTabS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_land);
         bottomNavigationLand= (AHBottomNavigation) findViewById(R.id.bottom_navigation_land);
+        if (savedInstanceState==null){
+            LandAquistion landAquistion = new LandAquistion();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, landAquistion).commit();
+        }
         bottomNavigationLand.setOnTabSelectedListener(this);
         this.createNavElements();
     }

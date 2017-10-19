@@ -15,6 +15,10 @@ public class Traffic extends AppCompatActivity implements AHBottomNavigation.OnT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traffic);
         trafficBottomNav = (AHBottomNavigation) findViewById(R.id.bottom_navigation_traffic);
+        if (savedInstanceState==null){
+            accident_person accidentPerson = new accident_person();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,accidentPerson).commit();
+        }
         trafficBottomNav.setOnTabSelectedListener(this);
         this.createNavItems();
     }
