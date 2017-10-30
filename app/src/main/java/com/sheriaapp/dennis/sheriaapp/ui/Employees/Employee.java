@@ -15,6 +15,11 @@ public class Employee extends AppCompatActivity implements AHBottomNavigation.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee);
         bottomNavEmployee = (AHBottomNavigation) findViewById(R.id.bottom_navigation_employee);
+        if (savedInstanceState==null){
+            Contract contract = new Contract();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,contract).commit();
+        }
+
         bottomNavEmployee.setOnTabSelectedListener(this);
         this.createNavItems();
     }

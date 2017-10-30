@@ -55,7 +55,8 @@ public class BusinessActivity extends AppCompatActivity implements AHBottomNavig
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, licenceBusiness).commit();
         }
         if (position==2){
-
+            SoleProprietor soleProprietor = new SoleProprietor();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, soleProprietor).commit();
         }
 
 

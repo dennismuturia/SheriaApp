@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LicenceBusiness extends Fragment {
+public class  LicenceBusiness extends Fragment {
     private DatabaseReference mRegisterBusiness;
     private ValueEventListener mRegisterBusinessListener;
     private ArrayList<String> licProcedure=new ArrayList<>();

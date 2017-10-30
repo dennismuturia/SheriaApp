@@ -93,14 +93,14 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                     .inputText(conversation)
                     .build();
             final FetchChatService watsonService = new FetchChatService();
-            final TextView messageText = (TextView) findViewById(R.id.message_text);
+            final TextView messageText = findViewById(R.id.message_text);
             watsonService.watsonConversationService.message(Constants.SHERIAWORKSPACE, request)
                     .enqueue(new ServiceCallback<MessageResponse>() {
                         @Override
                         public void onResponse(MessageResponse response) {
                             final String outputText = response.getText().get(0);
                             /* Code to store the response on Firebase */
-                            ChatMessage mChatMessage = new ChatMessage(outputText, "Lexy"); // Instantiating the model in order to store details onto Firebase.
+                            ChatMessage mChatMessage = new ChatMessage(outputText, "Lawman"); // Instantiating the model in order to store details onto Firebase.
                             String uid = user.getUid();
                             DatabaseReference chatRef = FirebaseDatabase
                                     .getInstance()

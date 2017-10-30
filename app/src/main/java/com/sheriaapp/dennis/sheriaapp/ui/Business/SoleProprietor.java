@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp.ui.Land;
+package com.sheriaapp.dennis.sheriaapp.ui.Business;
 
 
 import android.os.Bundle;
@@ -21,14 +21,12 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LandAquistion extends Fragment {
-    private DatabaseReference mLandAquistion;
-    private ArrayList<String> LandAquistionList = new ArrayList<>();
-    private ListView LandAquistionListView;
+public class SoleProprietor extends Fragment {
+    private DatabaseReference mSoleProprietor;
+    private ArrayList<String> mListSoleProprietor = new ArrayList<>();
+    private ListView mListViewSoleProprietor;
 
-
-
-    public LandAquistion() {
+    public SoleProprietor() {
         // Required empty public constructor
     }
 
@@ -37,23 +35,24 @@ public class LandAquistion extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_land_aquistion, container, false);
-        LandAquistionListView = (ListView) rootView.findViewById(R.id.list_acquire);
+       View rootView = inflater.inflate(R.layout.fragment_sole_proprietor, container, false);
 
-        mLandAquistion = FirebaseDatabase.getInstance()
+        mListViewSoleProprietor = (ListView) rootView.findViewById(R.id.list_proprietor);
+
+        mSoleProprietor = FirebaseDatabase.getInstance()
                 .getReference("laws")
-                .child("land")
-                .child("land_acquistion");
+                .child("business")
+                .child("register_a_business");
 
-        mLandAquistion.addValueEventListener(new ValueEventListener() {
+        mSoleProprietor.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data: dataSnapshot.getChildren()){
-                    LandAquistionList.add(data.getValue().toString());
+                    mListSoleProprietor.add(data.getValue().toString());
                 }
-                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,LandAquistionList);
-                LandAquistionListView.setAdapter(adapter);
+                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,mListSoleProprietor);
+                mListViewSoleProprietor.setAdapter(adapter);
 
             }
 

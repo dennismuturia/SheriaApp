@@ -12,7 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class Disclaimer extends AppCompatActivity implements View.OnClickListener{
-@Bind(R.id.continueToBot)Button goToBot;
+    @Bind(R.id.continueToBot)Button goToBot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,4 +30,8 @@ public class Disclaimer extends AppCompatActivity implements View.OnClickListene
             startActivity(intent);
         }
     }
+
 }
+
+
+

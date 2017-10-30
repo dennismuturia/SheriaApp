@@ -16,11 +16,8 @@
         android:text="Send"
         android:id="@+id/fab"
         android:layout_marginRight="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
+        android:layout_above="@+id/input"
+        android:layout_alignParentEnd="true" />
     <!--
 
        <TextView

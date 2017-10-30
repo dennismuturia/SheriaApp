@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ui.MainActivity">
         </activity>
         <activity android:name=".ui.ListOfLaws">
@@ -33,8 +34,10 @@
         <activity android:name=".ui.Marriage.Marriage" />
         <activity android:name=".ui.Voting.Voting" />
         <activity android:name=".ui.HumanRights.HumanRights" />
+
         <activity android:name=".ui.Disclaimer">
         </activity>
+
     </application>
 
 </manifest>

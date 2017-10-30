@@ -6,13 +6,21 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.google.firebase.database.DatabaseReference;
 import com.sheriaapp.dennis.sheriaapp.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class EmployeeRights extends Fragment {
+    private DatabaseReference mEmployeeRights;
+    private ArrayList<String> employeeRightlist = new ArrayList<>();
+    private ListView employeeRightsListView;
+
 
 
     public EmployeeRights() {
