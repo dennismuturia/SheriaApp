@@ -3,4 +3,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="disclaimer">The information contained in this application is for
+         general information purposes only. The information is provided by SheriaHelp
+         and while we endeavour to keep the information up to date and correct,
+         we make no representations or warranties of any kind, express or implied,
+         about the completeness, accuracy, reliability, suitability or availability with respect to the
+         application or the information, products, services, or related graphics contained on the application for any
+         purpose. Any reliance you place on such information is therefore strictly at your own risk.</string>
 </resources>

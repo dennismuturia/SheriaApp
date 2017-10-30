@@ -38,12 +38,12 @@ public class LandRightsTenants extends Fragment {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_land_rights_tenants, container, false);
 
-        landRightsTenantsListView = (ListView) rootView.findViewById(R.id.list_licence);
+        landRightsTenantsListView = (ListView) rootView.findViewById(R.id.list_tenants_rights);
 
         mLandRightsTenants = FirebaseDatabase.getInstance()
                 .getReference("laws")
                 .child("land")
-                .child("");
+                .child("tenants_rights");
 
         mLandRightsTenants.addValueEventListener(new ValueEventListener() {
 

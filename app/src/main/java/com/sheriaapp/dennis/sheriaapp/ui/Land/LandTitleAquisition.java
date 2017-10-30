@@ -38,12 +38,12 @@ public class LandTitleAquisition extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_land_title_aquisition, container, false);
 
-        landTitleAquisitionListView = (ListView) rootView.findViewById(R.id.list_licence);
+        landTitleAquisitionListView = (ListView) rootView.findViewById(R.id.list_title_acquire);
 
         mLandTitleAquisition = FirebaseDatabase.getInstance()
                 .getReference("laws")
                 .child("land")
-                .child("land_acquistion");
+                .child("land_aquistion");
 
         mLandTitleAquisition.addValueEventListener(new ValueEventListener() {
 

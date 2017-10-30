@@ -1,6 +1,7 @@
 package com.sheriaapp.dennis.sheriaapp.ui;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +13,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.sheriaapp.dennis.sheriaapp.R;
 import com.sheriaapp.dennis.sheriaapp.ui.Business.BusinessActivity;
 import com.sheriaapp.dennis.sheriaapp.ui.Court.CourtProcess;
@@ -20,6 +26,8 @@ import com.sheriaapp.dennis.sheriaapp.ui.Employees.Employee;
 import com.sheriaapp.dennis.sheriaapp.ui.Land.Land;
 import com.sheriaapp.dennis.sheriaapp.ui.Marriage.Marriage;
 import com.sheriaapp.dennis.sheriaapp.ui.Police.Police;
+
+import java.util.Arrays;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,11 +41,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.card_marriage) CardView myMarriage;
     @Bind(R.id.card_employment) CardView myEmployment;
     @Bind(R.id.card_police) CardView myPolice;
+    private static final int RC_SIGN_IN = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() == null) {
+            // not signed in
+            startActivityForResult(
+                    // Get an instance of AuthUI based on the default app
+                    AuthUI.getInstance().createSignInIntentBuilder()
+                            .setAvailableProviders(
+                                    Arrays.asList(new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
+                                            new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build(),
+                                            new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()))
+                            .build(),
+                    RC_SIGN_IN);
+        } else {
+            Toast.makeText(this,
+                    "Welcome " + FirebaseAuth.getInstance()
+                            .getCurrentUser()
+                            .getDisplayName(),
+                    Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this,
+                        "Successfully signed in. Welcome!",
+                        Toast.LENGTH_LONG)
+                        .show();
+            } else {
+                Toast.makeText(this,
+                        "We couldn't sign you in. Please try again later.",
+                        Toast.LENGTH_LONG)
+                        .show();
+            }
+        }
+
+
 
         myBusiness.setOnClickListener(this);
         myLand.setOnClickListener(this);
@@ -53,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.searchmenu, menu);
+        getMenuInflater().inflate(R.menu.signout, menu);
         MenuItem menuItem = menu.findItem(R.id.searchLaws);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -72,6 +121,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         return  super.onCreateOptionsMenu(menu);
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.menu_sign_out) {
+            AuthUI.getInstance().signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(MainActivity.this,
+                                    "You have been signed out.",
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                            finish();
+                        }
+                    });
+        }
+        return true;
+    }
 
     @Override
     public void onClick(View view) {
@@ -84,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (view == ChatBot){
-            Intent intent = new Intent(MainActivity.this, ChatArea.class);
+            Intent intent = new Intent(MainActivity.this, Disclaimer.class);
             startActivity(intent);
         }
         if (view==myPolice){

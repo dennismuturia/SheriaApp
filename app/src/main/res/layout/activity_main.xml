@@ -13,11 +13,11 @@
         android:layout_width="168dp"
         android:layout_height="141dp"
 
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="72dp"
         android:layout_marginRight="15dp"
         app:cardBackgroundColor="@color/transparent"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/card_land">
+        android:layout_alignStart="@+id/card_employment">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -48,11 +48,10 @@
         android:layout_width="168dp"
         android:layout_height="141dp"
 
-        android:layout_marginRight="15dp"
-        app:cardBackgroundColor="@color/transparent"
         android:layout_above="@+id/card_marriage"
-        android:layout_alignStart="@+id/card_employment"
-        android:layout_marginBottom="50dp">
+        android:layout_marginRight="15dp"
+        android:layout_toEndOf="@+id/card_police"
+        app:cardBackgroundColor="@color/transparent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,12 +81,11 @@
         android:id="@+id/card_police"
         android:layout_width="168dp"
         android:layout_height="141dp"
-        android:layout_alignBottom="@+id/card_business"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="9dp"
         android:layout_marginLeft="16dp"
         app:cardBackgroundColor="@color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignTop="@+id/card_business"
+        android:layout_alignParentStart="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -119,7 +117,7 @@
         android:layout_height="141dp"
         android:layout_marginRight="16dp"
         app:cardBackgroundColor="@color/transparent"
-        android:layout_alignTop="@+id/card_employment"
+        android:layout_above="@+id/card_business"
         android:layout_alignStart="@+id/card_police">
 
         <RelativeLayout
@@ -152,9 +150,7 @@
         android:layout_height="141dp"
         android:layout_marginRight="16dp"
         app:cardBackgroundColor="@color/transparent"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="35dp"
-        android:layout_above="@+id/card_police"
+        android:layout_above="@+id/card_business"
         android:layout_alignParentEnd="true">
 
         <RelativeLayout
@@ -183,9 +179,9 @@
         android:id="@+id/card_court"
         android:layout_width="168dp"
         android:layout_height="141dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/card_land"
+        android:layout_above="@+id/card_marriage"
         android:layout_marginLeft="16dp"
+        android:layout_toStartOf="@+id/card_employment"
         app:cardBackgroundColor="@color/transparent">
 
         <RelativeLayout
@@ -217,10 +213,8 @@
         android:layout_height="wrap_content"
         android:text="Chat With Bot"
         android:id="@+id/chatWithBot"
-        android:layout_alignTop="@+id/cardView6"
-        android:layout_alignStart="@+id/card_police"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="128dp">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
 
     </Button>
 </RelativeLayout>
