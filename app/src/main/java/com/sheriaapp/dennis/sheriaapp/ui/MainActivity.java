@@ -1,17 +1,16 @@
 package com.sheriaapp.dennis.sheriaapp.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -66,6 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .getDisplayName(),
                     Toast.LENGTH_LONG)
                     .show();
+            myBusiness.setOnClickListener(this);
+            myLand.setOnClickListener(this);
+            myCourt.setOnClickListener(this);
+            myMarriage.setOnClickListener(this);
+            myEmployment.setOnClickListener(this);
+            myPolice.setOnClickListener(this);
+            ChatBot.setOnClickListener(this);
         }
     }
 
@@ -77,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         "Successfully signed in. Welcome!",
                         Toast.LENGTH_LONG)
                         .show();
+
+
+
             } else {
                 Toast.makeText(this,
                         "We couldn't sign you in. Please try again later.",
@@ -87,13 +96,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        myBusiness.setOnClickListener(this);
-        myLand.setOnClickListener(this);
-        myCourt.setOnClickListener(this);
-        myMarriage.setOnClickListener(this);
-        myEmployment.setOnClickListener(this);
-        myPolice.setOnClickListener(this);
-        ChatBot.setOnClickListener(this);
 
     }
 

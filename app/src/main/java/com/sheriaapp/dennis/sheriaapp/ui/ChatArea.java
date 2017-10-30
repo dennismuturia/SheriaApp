@@ -61,6 +61,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                 .child(uid);
         /* MessageAdapter is the custom adapter which makes it easier to set the ListView*/
         messageAdapter = new MessageAdapter(ChatArea.this, ChatMessage.class, R.layout.list_item, query, this);
+
         messageListView.setAdapter(messageAdapter);
     }
 
@@ -122,7 +123,11 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
 
                         @Override
                         public void onFailure(Exception e) {
+                            final TextView messageText = findViewById(R.id.message_text);
 
+                            String myMessage = "This service is not available now";
+
+                            messageText.setText(myMessage);
                         }
                     });
         }
