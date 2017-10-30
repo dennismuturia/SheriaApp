@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (view == ChatBot){
-            Intent intent = new Intent(MainActivity.this, ChatArea.class);
+            Intent intent = new Intent(MainActivity.this, Disclaimer.class);
             startActivity(intent);
         }
     }
