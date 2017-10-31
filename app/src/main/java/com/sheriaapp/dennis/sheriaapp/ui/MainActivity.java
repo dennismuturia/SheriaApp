@@ -66,6 +66,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .getDisplayName(),
                     Toast.LENGTH_LONG)
                     .show();
+            myBusiness.setOnClickListener(this);
+            myLand.setOnClickListener(this);
+            myCourt.setOnClickListener(this);
+            myMarriage.setOnClickListener(this);
+            myEmployment.setOnClickListener(this);
+            myPolice.setOnClickListener(this);
+            ChatBot.setOnClickListener(this);
+
         }
     }
 
@@ -77,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         "Successfully signed in. Welcome!",
                         Toast.LENGTH_LONG)
                         .show();
+
             } else {
                 Toast.makeText(this,
                         "We couldn't sign you in. Please try again later.",
@@ -87,13 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        myBusiness.setOnClickListener(this);
-        myLand.setOnClickListener(this);
-        myCourt.setOnClickListener(this);
-        myMarriage.setOnClickListener(this);
-        myEmployment.setOnClickListener(this);
-        myPolice.setOnClickListener(this);
-        ChatBot.setOnClickListener(this);
+
 
     }
 
