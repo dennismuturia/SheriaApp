@@ -27,11 +27,17 @@ public class Traffic extends AppCompatActivity implements AHBottomNavigation.OnT
         AHBottomNavigationItem traffic = new AHBottomNavigationItem("offences", R.drawable.traffic_light);
         AHBottomNavigationItem accidentCar = new AHBottomNavigationItem("Car_on_Car", R.drawable.accident);
         AHBottomNavigationItem accidentPerson = new AHBottomNavigationItem("Car_on_Person", R.drawable.accident_person);
+        AHBottomNavigationItem arrested = new AHBottomNavigationItem("Arrested",R.drawable.arrested);
+        AHBottomNavigationItem rights = new AHBottomNavigationItem("Rights",R.drawable.rights);
 
         //Adding them to the bar
         trafficBottomNav.addItem(traffic);
-     trafficBottomNav.addItem(accidentCar);
+        trafficBottomNav.addItem(accidentCar);
         trafficBottomNav.addItem(accidentPerson);
+        trafficBottomNav.addItem(arrested);
+        trafficBottomNav.addItem(rights);
+
+
         //setting the properties
         trafficBottomNav.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
         // Change colors
@@ -55,6 +61,13 @@ public class Traffic extends AppCompatActivity implements AHBottomNavigation.OnT
         if (position ==2){
             Offences trafficOffences = new Offences();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,trafficOffences).commit();
+        }if (position ==3){
+            accident_person.Arrested arrested = new accident_person.Arrested();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,arrested).commit();
+        }
+        if (position == 4){
+            accident_person.ArrestedRights arrestedRights = new accident_person.ArrestedRights();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, arrestedRights).commit();
         }
 
     }

@@ -20,8 +20,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.sheriaapp.dennis.sheriaapp.R;
 import com.sheriaapp.dennis.sheriaapp.ui.Business.BusinessActivity;
-import com.sheriaapp.dennis.sheriaapp.ui.Court.CourtProcess;
 import com.sheriaapp.dennis.sheriaapp.ui.Employees.Employee;
+import com.sheriaapp.dennis.sheriaapp.ui.HumanRights.HumanRights;
 import com.sheriaapp.dennis.sheriaapp.ui.Land.Land;
 import com.sheriaapp.dennis.sheriaapp.ui.Marriage.Marriage;
 import com.sheriaapp.dennis.sheriaapp.ui.Police.Police;
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (view==myCourt){
-            Intent intent = new Intent(MainActivity.this,CourtProcess.class);
+            Intent intent = new Intent(MainActivity.this, HumanRights.class);
 
             startActivity(intent);
         }

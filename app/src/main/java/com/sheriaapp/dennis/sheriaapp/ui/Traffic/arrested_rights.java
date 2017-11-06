@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp.ui.Police;
+package com.sheriaapp.dennis.sheriaapp.ui.Traffic;
 
 
 import android.os.Bundle;
@@ -16,15 +16,12 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ArrestedRights extends Fragment {
+public class arrested_rights extends Fragment {
     private DatabaseReference mArrestedRights;
     private ArrayList<String> arrestedRightsList = new ArrayList<>();
     private ListView arrestedRightsListView;
 
-
-
-
-    public ArrestedRights() {
+    public arrested_rights() {
         // Required empty public constructor
     }
 
@@ -33,7 +30,7 @@ public class ArrestedRights extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_arrested_rights, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_arrested_rights, container, false);
 
         return rootView;
     }

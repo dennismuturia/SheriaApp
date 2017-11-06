@@ -363,7 +363,7 @@
 
                         android:layout_alignEnd="@+id/textView2"
                         android:layout_marginLeft="40sp"
-                        app:srcCompat="@drawable/court" />
+                        app:srcCompat="@drawable/humanrights" />
 
 
                     <TextView
@@ -378,7 +378,7 @@
 
                         android:layout_centerHorizontal="true"
 
-                        android:text="Court Process"
+                        android:text="Human Rights"
 
                         android:textColor="@color/black"
 

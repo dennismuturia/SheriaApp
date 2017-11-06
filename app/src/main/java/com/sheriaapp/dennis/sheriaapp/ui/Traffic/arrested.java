@@ -1,4 +1,4 @@
-package com.sheriaapp.dennis.sheriaapp.ui.Police;
+package com.sheriaapp.dennis.sheriaapp.ui.Traffic;
 
 
 import android.os.Bundle;
@@ -16,15 +16,13 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Arrested extends Fragment {
+public class arrested extends Fragment {
     private DatabaseReference mArrested;
     private ArrayList<String> arrestedList = new ArrayList<>();
     private ListView arrestedListView;
 
 
-
-
-    public Arrested() {
+    public arrested() {
         // Required empty public constructor
     }
 
