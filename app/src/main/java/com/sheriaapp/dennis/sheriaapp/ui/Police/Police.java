@@ -30,8 +30,11 @@ public class Police extends AppCompatActivity implements AHBottomNavigation.OnTa
         bottomNavigationPolice.addItem(arrested);
         bottomNavigationPolice.addItem(rights);
 
-        bottomNavigationPolice.setDefaultBackgroundColor(Color.parseColor("#3F51B5"));
+        bottomNavigationPolice.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
         bottomNavigationPolice.setCurrentItem(0);
+        // Change colors
+        bottomNavigationPolice.setAccentColor(Color.parseColor("#FFFFFF"));
+        bottomNavigationPolice.setInactiveColor(Color.parseColor("#424242"));
 
     }
 

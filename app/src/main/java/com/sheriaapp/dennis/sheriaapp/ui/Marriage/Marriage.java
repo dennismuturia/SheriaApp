@@ -15,6 +15,10 @@ public class Marriage extends AppCompatActivity implements AHBottomNavigation.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marriage);
         bottomNavigationMarriage = (AHBottomNavigation) findViewById(R.id.bottom_navigation_marriage);
+        if (savedInstanceState==null){
+            Christian christian = new Christian();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,christian).commit();
+        }
         bottomNavigationMarriage.setOnTabSelectedListener(this);
         this.createNavItems();
     }
@@ -27,9 +31,12 @@ public class Marriage extends AppCompatActivity implements AHBottomNavigation.On
         bottomNavigationMarriage.addItem(christian);
         bottomNavigationMarriage.addItem(muslim);
         bottomNavigationMarriage.addItem(hindu);
+        // Change colors
+        bottomNavigationMarriage.setAccentColor(Color.parseColor("#FFFFFF"));
+        bottomNavigationMarriage.setInactiveColor(Color.parseColor("#424242"));
 
         //setting the properties
-        bottomNavigationMarriage.setDefaultBackgroundColor(Color.parseColor("#3F51B5"));
+        bottomNavigationMarriage.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
         //set the current item
         bottomNavigationMarriage.setCurrentItem(0);
 
@@ -38,7 +45,7 @@ public class Marriage extends AppCompatActivity implements AHBottomNavigation.On
     public void onTabSelected(int position, boolean wasSelected) {
         if (position==0){
             Christian christian = new Christian();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,christian);
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,christian).commit();
         }
         if (position==1){
             Muslim muslim = new Muslim();

@@ -33,7 +33,10 @@ public class Traffic extends AppCompatActivity implements AHBottomNavigation.OnT
      trafficBottomNav.addItem(accidentCar);
         trafficBottomNav.addItem(accidentPerson);
         //setting the properties
-        trafficBottomNav.setDefaultBackgroundColor(Color.parseColor("#3F51B5"));
+        trafficBottomNav.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
+        // Change colors
+        trafficBottomNav.setAccentColor(Color.parseColor("#FFFFFF"));
+        trafficBottomNav.setInactiveColor(Color.parseColor("#424242"));
         //set the current item
         trafficBottomNav.setCurrentItem(0);
 

@@ -50,5 +50,4 @@ dependencies {
     compile 'com.ibm.watson.developer_cloud:java-sdk:3.7.2'
     testCompile 'junit:junit:4.12'
 }
-
 apply plugin: 'com.google.gms.google-services'

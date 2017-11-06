@@ -33,7 +33,10 @@ public class Employee extends AppCompatActivity implements AHBottomNavigation.On
         bottomNavEmployee.addItem(termination);
         bottomNavEmployee.addItem(EmployeeRights);
         //setting the properties
-        bottomNavEmployee.setDefaultBackgroundColor(Color.parseColor("#3F51B5"));
+        bottomNavEmployee.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
+        // Change colors
+        bottomNavEmployee.setAccentColor(Color.parseColor("#FFFFFF"));
+        bottomNavEmployee.setInactiveColor(Color.parseColor("#424242"));
         //set the current item
         bottomNavEmployee.setCurrentItem(0);
 

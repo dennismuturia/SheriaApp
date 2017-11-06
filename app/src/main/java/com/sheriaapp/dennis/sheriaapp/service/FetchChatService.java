@@ -9,5 +9,5 @@ import com.sheriaapp.dennis.sheriaapp.Constants;
  */
 
 public class FetchChatService {
-    public ConversationService sheriaConversationService = new ConversationService("2017-05-06", Constants.SHERIAPUSERNAME, Constants.SHERIAPASSWORD);
+    public ConversationService  watsonConversationService = new ConversationService("2017-05-06", Constants.SHERIAPUSERNAME, Constants.SHERIAPASSWORD);
 }

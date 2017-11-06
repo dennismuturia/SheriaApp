@@ -10,26 +10,25 @@
         android:layout_height="200dp"
         android:src="@drawable/land1"
         android:id="@+id/disclaimer"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="71dp" />
+
+        android:layout_above="@+id/continueToBot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="358dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:text="@string/disclaimer"
         android:id="@+id/textView3"
-        android:layout_below="@+id/disclaimer"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="9dp"
-        android:layout_marginTop="30dp">
-
-    </TextView>
+        android:layout_above="@+id/continueToBot"
+        android:layout_alignParentStart="true" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue to Bot"
+        android:background="@color/maincolor"
+        android:textColor="@color/white"
         android:id="@+id/continueToBot"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
@@ -37,3 +36,6 @@
     </Button>
 
 </RelativeLayout>
+
+
+

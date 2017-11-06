@@ -1,41 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sheriaapp.dennis.sheriaapp.sheriaap.ui.ChatArea">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="550dp">
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Message"
-            android:id="@+id/user_input"
-            android:imeOptions="actionDone"
-            android:inputType="textShortMessage"/>
+    android:id="@+id/relativeLayout"
+    tools:context="com.sheriaapp.dennis.sheriaapp.ui.ChatArea"
+    android:background="@color/white">
 
-</RelativeLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="send"
-        android:id="@+id/sendButton"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"/>
+        android:clickable="true"
+        android:text="Send"
+        android:id="@+id/fab"
+        android:layout_marginRight="5dp"
+        android:layout_above="@+id/input"
+        android:layout_alignParentEnd="true" />
+    <!--
 
-    <ScrollView
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_toLeftOf="@+id/fab"
+           android:layout_toStartOf="@+id/fab"
+           android:padding="0dp"
+           android:layout_marginBottom="6dp"
+           android:layout_alignParentBottom="true"
+           />
+    -->
+            <EditText
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:hint="Enter some message"
+                android:textColorHint="@color/black"
+                android:id="@+id/input"
+                android:layout_alignParentBottom="true"
+                android:layout_alignEnd="@+id/fab" />
+
+
+
+    <ListView
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="match_parent"
+        android:id="@+id/list_of_messages"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/conversation"
-            android:textSize="16sp"
-            />
-    </ScrollView>
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/fab"
+        android:dividerHeight="0dp"
+        android:layout_margin="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentLeft="true"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll">
 
+    </ListView>
+    <!--
+-->
 </RelativeLayout>

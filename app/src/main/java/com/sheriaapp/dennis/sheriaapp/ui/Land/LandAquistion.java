@@ -37,7 +37,7 @@ public class LandAquistion extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_land_aquistion, container, false);
+    View rootView = inflater.inflate(R.layout.fragment_land_aquistion, container, false);
         LandAquistionListView = (ListView) rootView.findViewById(R.id.list_acquire);
 
         mLandAquistion = FirebaseDatabase.getInstance()
@@ -64,6 +64,6 @@ public class LandAquistion extends Fragment {
         });
 
         return rootView;
-    }
+        }
 
 }

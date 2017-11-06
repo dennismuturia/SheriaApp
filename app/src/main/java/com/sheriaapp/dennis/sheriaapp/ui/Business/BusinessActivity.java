@@ -35,7 +35,10 @@ public class BusinessActivity extends AppCompatActivity implements AHBottomNavig
         bottomNavigation.addItem(licence);
         bottomNavigation.addItem(soleproprietor);
         //setting the properties
-        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#3F51B5"));
+        bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
+        // Change colors
+        bottomNavigation.setAccentColor(Color.parseColor("#FFFFFF"));
+        bottomNavigation.setInactiveColor(Color.parseColor("#424242"));
         //set the current item
         bottomNavigation.setCurrentItem(0);
 

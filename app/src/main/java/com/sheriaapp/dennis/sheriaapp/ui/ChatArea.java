@@ -1,80 +1,136 @@
 package com.sheriaapp.dennis.sheriaapp.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageRequest;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
 import com.ibm.watson.developer_cloud.http.ServiceCallback;
 import com.sheriaapp.dennis.sheriaapp.Constants;
 import com.sheriaapp.dennis.sheriaapp.R;
+import com.sheriaapp.dennis.sheriaapp.adapters.MessageAdapter;
+import com.sheriaapp.dennis.sheriaapp.model.ChatMessage;
 import com.sheriaapp.dennis.sheriaapp.service.FetchChatService;
-
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class ChatArea extends AppCompatActivity implements View.OnClickListener{
-    @Bind(R.id.conversation)TextView convesation;
-    @Bind(R.id.user_input)EditText userInput;
-    @Bind(R.id.sendButton)Button mButton;
+
     //TextView mConversation = (TextView)findViewById(R.id.conversation);
+    private FirebaseListAdapter<ChatMessage> adapter;
+    private ChatMessage chatMessage;
+    private MessageAdapter messageAdapter;
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    @Bind(R.id.fab)
+    Button fab;
+    @Bind(R.id.input) EditText userInput;
+    @Bind(R.id.list_of_messages)
+    ListView messageListView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_area);
-
         ButterKnife.bind(this);
 
-        mButton.setOnClickListener(this);
+        fab.setOnClickListener(this);
+        //check if not signed in then navigate to SignIn Page
+
+        displayChatMessage();
+    }
+
+    private void displayChatMessage() {
+        String uid = user.getUid();
+        Query query = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_CHAT)
+                .child(uid);
+        /* MessageAdapter is the custom adapter which makes it easier to set the ListView*/
+        messageAdapter = new MessageAdapter(ChatArea.this, ChatMessage.class, R.layout.list_item, query, this);
+
+        messageListView.setAdapter(messageAdapter);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == mButton){
-            String message = userInput.getText().toString();
-
-            watsonConversation(message);
+        String message = userInput.getText().toString();
+        if (!message.equals("")) { // If statement ensures a message doesn't go blank
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                ChatMessage mChatMessage = new ChatMessage(message, String.valueOf(user.getEmail()));
+                String uid = user.getUid();
+                DatabaseReference chatRef = FirebaseDatabase
+                        .getInstance()
+                        .getReference(Constants.FIREBASE_CHILD_CHAT)
+                        .child(uid);
+                DatabaseReference pushRef = chatRef.push();
+                String pushId = pushRef.getKey();
+                mChatMessage.setPushId(pushId);
+                mChatMessage.setSend(true);
+                pushRef.setValue(mChatMessage);
+            }
+            watsonConversation(message); // Method to call on the Watson Service
             userInput.setText("");
         }
-
     }
 
-    private  void watsonConversation( String conversation){
-        MessageRequest request = new MessageRequest.Builder()
-                .inputText(conversation)
-                .build();
-        FetchChatService watsonService = new FetchChatService();
+    private void watsonConversation(String conversation) {
+        if (!conversation.equals("")) {
+            MessageRequest request = new MessageRequest.Builder()
+                    .inputText(conversation)
+                    .build();
+            final FetchChatService watsonService = new FetchChatService();
+            final TextView messageText = findViewById(R.id.message_text);
+            watsonService.watsonConversationService.message(Constants.SHERIAWORKSPACE, request)
+                    .enqueue(new ServiceCallback<MessageResponse>() {
+                        @Override
+                        public void onResponse(MessageResponse response) {
+                            final String outputText = response.getText().get(0);
+                            /* Code to store the response on Firebase */
+                            ChatMessage mChatMessage = new ChatMessage(outputText, "Lawman"); // Instantiating the model in order to store details onto Firebase.
+                            String uid = user.getUid();
+                            DatabaseReference chatRef = FirebaseDatabase
+                                    .getInstance()
+                                    .getReference(Constants.FIREBASE_CHILD_CHAT)
+                                    .child(uid);
+                            DatabaseReference pushRef = chatRef.push();
+                            String pushId = pushRef.getKey();
+                            mChatMessage.setPushId(pushId);
+                            mChatMessage.setSend(false);
+                            pushRef.setValue(mChatMessage);
+                            Log.d("Bot:", String.valueOf(outputText));
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    messageText.setText(outputText);
+                                }
+                            });
+                        }
 
-        final TextView messageText = (TextView) findViewById(R.id.conversation);
+                        @Override
+                        public void onFailure(Exception e) {
+                            final TextView messageText = findViewById(R.id.message_text);
 
-        watsonService.sheriaConversationService.message(Constants.SHERIAWORKSPACE, request)
-                .enqueue(new ServiceCallback<MessageResponse>() {
-                    @Override
-                    public void onResponse(MessageResponse response) {
-                        final String outputText = response.getText().get(0);
-                        Log.d("Bot:", String.valueOf(outputText));
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-//                                messageText.setText(Html.fromHtml("<p><b>Lexy:</b> " + outputText + "</p>"));
-                                messageText.setText(outputText);
-                            }
-                        });
-                    }
+                            String myMessage = "This service is not available now";
 
-                    @Override
-                    public void onFailure(Exception e) {
-                    }
-
-                });
+                            messageText.setText(myMessage);
+                        }
+                    });
+        }
     }
 }
 

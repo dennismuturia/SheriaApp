@@ -34,7 +34,10 @@ public class Land extends AppCompatActivity implements AHBottomNavigation.OnTabS
         bottomNavigationLand.addItem(landlordTenant);
         bottomNavigationLand.addItem(title);
         //setting the properties
-        bottomNavigationLand.setDefaultBackgroundColor(Color.parseColor("#3F51B5"));
+        bottomNavigationLand.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
+        // Change colors
+        bottomNavigationLand.setAccentColor(Color.parseColor("#FFFFFF"));
+        bottomNavigationLand.setInactiveColor(Color.parseColor("#424242"));
         //set the current item
         bottomNavigationLand.setCurrentItem(0);
 

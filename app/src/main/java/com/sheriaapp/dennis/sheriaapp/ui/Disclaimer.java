@@ -30,4 +30,8 @@ public class Disclaimer extends AppCompatActivity implements View.OnClickListene
             startActivity(intent);
         }
     }
+
 }
+
+
+
