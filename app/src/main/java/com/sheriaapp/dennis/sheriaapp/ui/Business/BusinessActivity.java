@@ -15,7 +15,7 @@ public class BusinessActivity extends AppCompatActivity implements AHBottomNavig
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business);
-        bottomNavigation= (AHBottomNavigation) findViewById(R.id.bottom_navigation);
+        bottomNavigation=  findViewById(R.id.bottom_navigation);
         if (savedInstanceState==null){
             RegisterBusiness registerBusiness = new RegisterBusiness();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,registerBusiness).commit();

@@ -14,7 +14,7 @@ public class Employee extends AppCompatActivity implements AHBottomNavigation.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee);
-        bottomNavEmployee = (AHBottomNavigation) findViewById(R.id.bottom_navigation_employee);
+        bottomNavEmployee = findViewById(R.id.bottom_navigation_employee);
         if (savedInstanceState==null){
             Contract contract = new Contract();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,contract).commit();
@@ -27,11 +27,11 @@ public class Employee extends AppCompatActivity implements AHBottomNavigation.On
         //creating nav elements
         AHBottomNavigationItem contract = new AHBottomNavigationItem("contract",R.drawable.contract);
         AHBottomNavigationItem termination = new AHBottomNavigationItem("Terminated", R.drawable.people);
-        AHBottomNavigationItem EmployeeRights = new AHBottomNavigationItem("Employee_Rights", R.drawable.employeework);
+
        //adding them to the bottom nav bar
         bottomNavEmployee.addItem(contract);
         bottomNavEmployee.addItem(termination);
-        bottomNavEmployee.addItem(EmployeeRights);
+
         //setting the properties
         bottomNavEmployee.setDefaultBackgroundColor(Color.parseColor("#B71C1C"));
         // Change colors
@@ -47,10 +47,6 @@ public class Employee extends AppCompatActivity implements AHBottomNavigation.On
         if (position==0){
             Contract contract = new Contract();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,contract).commit();
-        }
-        if (position==1){
-            EmployeeRights employeeRights = new EmployeeRights();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,employeeRights).commit();
         }
         if (position==2){
             Termination terminate = new Termination();

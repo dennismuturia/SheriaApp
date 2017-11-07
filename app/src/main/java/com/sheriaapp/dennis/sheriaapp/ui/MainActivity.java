@@ -24,7 +24,8 @@ import com.sheriaapp.dennis.sheriaapp.ui.Employees.Employee;
 import com.sheriaapp.dennis.sheriaapp.ui.HumanRights.HumanRights;
 import com.sheriaapp.dennis.sheriaapp.ui.Land.Land;
 import com.sheriaapp.dennis.sheriaapp.ui.Marriage.Marriage;
-import com.sheriaapp.dennis.sheriaapp.ui.Police.Police;
+import com.sheriaapp.dennis.sheriaapp.ui.Traffic.Traffic;
+
 
 import java.util.Arrays;
 
@@ -159,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if (view==myPolice){
-            Intent intent = new Intent(MainActivity.this,Police.class);
+            Intent intent = new Intent(MainActivity.this,Traffic.class);
             startActivity(intent);
         }
         if (view==myCourt){

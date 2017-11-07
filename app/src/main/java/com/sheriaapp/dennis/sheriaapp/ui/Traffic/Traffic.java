@@ -62,12 +62,12 @@ public class Traffic extends AppCompatActivity implements AHBottomNavigation.OnT
             Offences trafficOffences = new Offences();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,trafficOffences).commit();
         }if (position ==3){
-            accident_person.Arrested arrested = new accident_person.Arrested();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,arrested).commit();
+            arrested arrested = new arrested();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, arrested).commit();
         }
         if (position == 4){
-            accident_person.ArrestedRights arrestedRights = new accident_person.ArrestedRights();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, arrestedRights).commit();
+            arrested_rights aRights = new arrested_rights();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, aRights).commit();
         }
 
     }

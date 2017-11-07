@@ -29,6 +29,18 @@ public class Christian extends Fragment {
     private DatabaseReference mRegister;
     private ArrayList<String> registerList = new ArrayList<>();
     private ListView registerListView;
+    private DatabaseReference mAge;
+    private ArrayList<String> ageList = new ArrayList<>();
+    private ListView ageListView;
+    private DatabaseReference mCertificate;
+    private ArrayList<String> certificateList = new ArrayList<>();
+    private ListView certificateListView;
+    private DatabaseReference mRequirements;
+    private ArrayList<String> requirementsList = new ArrayList<>();
+    private ListView requirementsListView;
+    private DatabaseReference mWitnesses;
+    private ArrayList<String> witnessesList = new ArrayList<>();
+    private ListView witnessesListView;
 
     public Christian() {
         // Required empty public constructor
@@ -95,7 +107,114 @@ public class Christian extends Fragment {
             }
         });
 
+        //database call for marriage age
+        ageListView = rootView.findViewById(R.id.age);
+        mAge = FirebaseDatabase.getInstance()
+                .getReference("laws")
+                .child("marriages")
+                .child("christian_marriages")
+                .child("marriage_age");
 
+        mAge.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data: dataSnapshot.getChildren()){
+                    ageList.add(data.getValue().toString());
+                }
+                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,ageList);
+                ageListView.setAdapter(adapter);
+                //set dynamic height for all listviews
+                setDynamicHeight(ageListView);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //database call for marriage certificate
+        certificateListView = rootView.findViewById(R.id.certificate);
+        mCertificate = FirebaseDatabase.getInstance()
+                .getReference("laws")
+                .child("marriages")
+                .child("christian_marriages")
+                .child("marriage_certificate");
+
+        mCertificate.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data: dataSnapshot.getChildren()){
+                    certificateList.add(data.getValue().toString());
+                }
+                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,certificateList);
+                certificateListView.setAdapter(adapter);
+                //set dynamic height for all listviews
+                setDynamicHeight(certificateListView);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //database call for marriage witnesses
+        witnessesListView = rootView.findViewById(R.id.witness);
+        mWitnesses = FirebaseDatabase.getInstance()
+                .getReference("laws")
+                .child("marriages")
+                .child("christian_marriages")
+                .child("witnesses");
+
+        mWitnesses.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data: dataSnapshot.getChildren()){
+                    witnessesList.add(data.getValue().toString());
+                }
+                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,witnessesList);
+                witnessesListView.setAdapter(adapter);
+                //set dynamic height for all listviews
+                setDynamicHeight(witnessesListView);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        //database call for marriage requirements
+        requirementsListView = rootView.findViewById(R.id.requirements);
+        mRequirements = FirebaseDatabase.getInstance()
+                .getReference("laws")
+                .child("marriages")
+                .child("christian_marriages")
+                .child("requirements");
+
+        mRequirements.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data: dataSnapshot.getChildren()){
+                    requirementsList.add(data.getValue().toString());
+                }
+                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,requirementsList);
+                requirementsListView.setAdapter(adapter);
+                //set dynamic height for all listviews
+                setDynamicHeight(requirementsListView);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         return rootView;
     }
