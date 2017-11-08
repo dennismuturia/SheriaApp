@@ -43,7 +43,7 @@ public class LandTitleAquisition extends Fragment {
         mLandTitleAquisition = FirebaseDatabase.getInstance()
                 .getReference("laws")
                 .child("land")
-                .child("land_aquistion");
+                .child("land_acquistion");
 
         mLandTitleAquisition.addValueEventListener(new ValueEventListener() {
 

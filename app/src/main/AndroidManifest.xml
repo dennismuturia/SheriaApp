@@ -27,10 +27,8 @@
         </activity>
         <activity android:name=".ui.Business.BusinessActivity" />
         <activity android:name=".ui.Traffic.Traffic" />
-        <activity android:name=".ui.Court.CourtProcess" />
         <activity android:name=".ui.Land.Land" />
-        <activity android:name=".ui.Employees.Employee" />
-        <activity android:name=".ui.Police.Police" />
+        <activity android:name=".ui.Employees.Employee" />>
         <activity android:name=".ui.Marriage.Marriage" />
         <activity android:name=".ui.Voting.Voting" />
         <activity android:name=".ui.HumanRights.HumanRights" />

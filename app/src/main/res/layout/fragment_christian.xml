@@ -1,7 +1,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context="com.sheriaapp.dennis.sheriaapp.ui.Marriage.Christian">
     <LinearLayout
@@ -22,7 +22,8 @@
         android:id="@+id/ceremony"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:dividerHeight="2dp">
     </ListView>
 
         <TextView
@@ -38,7 +39,8 @@
             android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"></ListView>
+            android:layout_weight="1">
+        </ListView>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,7 +54,8 @@
             android:id="@+id/age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:dividerHeight="2dp">
         </ListView>
         <TextView
             android:layout_width="match_parent"
@@ -67,7 +70,8 @@
             android:id="@+id/witness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:dividerHeight="2dp">
         </ListView>
         <TextView
             android:layout_width="match_parent"
@@ -82,7 +86,8 @@
             android:id="@+id/certificate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:dividerHeight="2dp">
         </ListView>
         <TextView
             android:layout_width="match_parent"
@@ -97,7 +102,8 @@
             android:id="@+id/requirements"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:dividerHeight="2dp">
         </ListView>
     </LinearLayout>
 

@@ -48,7 +48,7 @@ public class Employee extends AppCompatActivity implements AHBottomNavigation.On
             Contract contract = new Contract();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,contract).commit();
         }
-        if (position==2){
+        if (position==1){
             Termination terminate = new Termination();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,terminate).commit();
         }
