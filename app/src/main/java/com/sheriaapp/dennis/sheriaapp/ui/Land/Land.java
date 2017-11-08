@@ -25,12 +25,10 @@ public class Land extends AppCompatActivity implements AHBottomNavigation.OnTabS
     private void createNavElements(){
         //creating nav elements
         AHBottomNavigationItem landAquistion = new AHBottomNavigationItem("Buy Land", R.drawable.agent);
-        AHBottomNavigationItem landRights = new AHBottomNavigationItem("Land Right", R.drawable.rights);
-        AHBottomNavigationItem landlordTenant = new AHBottomNavigationItem("Tenants&LandLords", R.drawable.landlord);
+        AHBottomNavigationItem landlordTenant = new AHBottomNavigationItem("Tenants&LandLords", R.drawable.rights);
         AHBottomNavigationItem title = new AHBottomNavigationItem("Title Deed", R.drawable.title);
         //populating the bottom nav bar
         bottomNavigationLand.addItem(landAquistion);
-        bottomNavigationLand.addItem(landRights);
         bottomNavigationLand.addItem(landlordTenant);
         bottomNavigationLand.addItem(title);
         //setting the properties

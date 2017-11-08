@@ -16,7 +16,8 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list_title_acquire">
+        android:id="@+id/list_title_acquire"
+        android:layout_marginTop="40dp">
 
     </ListView>
 

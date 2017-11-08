@@ -48,7 +48,7 @@ public class LandRightsTenants extends Fragment {
         mLandRightsTenants = FirebaseDatabase.getInstance()
                 .getReference("laws")
                 .child("land")
-                .child("tenants_rights");
+                .child("tenant_right");
 
         mLandRightsTenants.addValueEventListener(new ValueEventListener() {
 

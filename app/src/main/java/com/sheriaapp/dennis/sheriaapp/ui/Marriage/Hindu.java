@@ -52,7 +52,7 @@ public class Hindu extends Fragment {
                 .getInstance()
                 .getReference("laws")
                 .child("marriages")
-                .child("hindu_marriages")
+                .child("hindu_marriage")
                 .child("ceremony");
         mCeremony.addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,7 +80,7 @@ public class Hindu extends Fragment {
                 .getInstance()
                 .getReference("laws")
                 .child("marriage")
-                .child("hindu_marriages")
+                .child("hindu_marriage")
                 .child("conditions");
         mConditions.addValueEventListener(new ValueEventListener() {
             @Override
@@ -108,7 +108,7 @@ public class Hindu extends Fragment {
                 .getInstance()
                 .getReference("laws")
                 .child("marriages")
-                .child("hindu_marriages")
+                .child("hindu_marriage")
                 .child("ground_for_divorce");
         mDivorce.addValueEventListener(new ValueEventListener() {
             @Override
