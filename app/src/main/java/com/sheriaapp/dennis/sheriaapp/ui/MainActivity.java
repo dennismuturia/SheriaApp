@@ -141,6 +141,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             finish();
                         }
                     });
+        }if(item.getItemId() == R.id.find_a_lawyer){
+            Intent intent = new Intent(MainActivity.this, FindLawyer.class);
+            startActivity(intent);
         }
         return true;
     }

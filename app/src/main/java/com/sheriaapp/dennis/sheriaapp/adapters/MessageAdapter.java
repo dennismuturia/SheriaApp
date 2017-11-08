@@ -16,7 +16,7 @@ import com.sheriaapp.dennis.sheriaapp.model.ChatMessage;
  * Created by dennis on 10/24/17.
  */
 
-public class MessageAdapter extends FirebaseListAdapter<ChatMessage> {
+public class MessageAdapter extends FirebaseListAdapter<ChatMessage>{
     private DatabaseReference mRef;
     private Context mContext;
 
@@ -33,9 +33,12 @@ public class MessageAdapter extends FirebaseListAdapter<ChatMessage> {
         TextView messageUser = v.findViewById(R.id.message_user);
         TextView messageTime = v.findViewById(R.id.message_time);
         //Set their text
+
         messageText.setText(model.getMessageText());
         messageUser.setText(model.getMessageUser());
+
         //Format te data before showing it
         messageTime.setText(DateFormat.format("dd-mm-yyyy (hh:mm)",model.getMessageTime()));
     }
+
 }
