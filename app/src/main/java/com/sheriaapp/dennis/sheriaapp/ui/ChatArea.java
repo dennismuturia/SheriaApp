@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +34,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
     private FirebaseListAdapter<ChatMessage> adapter;
     private ChatMessage chatMessage;
     private MessageAdapter messageAdapter;
+    private ProgressBar spinner;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     @Bind(R.id.btn_send)
     ImageButton fab;
@@ -117,7 +118,6 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-
                                     messageText.setText(outputText);
                                 }
                             });
@@ -125,7 +125,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
 
                         @Override
                         public void onFailure(Exception e) {
-                            Toast.makeText(getApplicationContext(), "Cannot connect to the internet", Toast.LENGTH_SHORT).show();
+                            spinner = findViewById(R.id.progressBar1);
                         }
                     });
         }

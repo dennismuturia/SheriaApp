@@ -43,16 +43,7 @@
         android:orientation="horizontal"
         android:weightSum="4">
 
-        <android.support.v7.widget.AppCompatImageButton
-            android:id="@+id/btn_record"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:background="@null"
-            android:elevation="0dp"
-            android:paddingLeft="10dp"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/ic_mic" />
+
 
         <EditText
             android:id="@+id/messageInput"
@@ -62,7 +53,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="3"
             android:background="@null"
-            android:hint="what_s_on_your_mind"
+            android:hint="what's on your mind"
             android:lines="1"
             android:paddingLeft="10dp" />
 
