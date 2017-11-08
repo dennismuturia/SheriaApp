@@ -95,7 +95,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                     .inputText(conversation)
                     .build();
             final FetchChatService watsonService = new FetchChatService();
-            final TextView messageText = findViewById(R.id.message_user);
+            final TextView messageText = findViewById(R.id.message_text);
             watsonService.watsonConversationService.message(Constants.SHERIAWORKSPACE, request)
                     .enqueue(new ServiceCallback<MessageResponse>() {
                         @Override
