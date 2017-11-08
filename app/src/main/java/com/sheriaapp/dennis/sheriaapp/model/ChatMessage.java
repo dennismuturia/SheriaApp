@@ -20,9 +20,15 @@ public class ChatMessage {
     }
     public ChatMessage() {}
 
+
     public String getMessageText() {
         return messageText;
     }
+
+
+    public String getMessage(){ return  messageText;}
+
+    public String setMessage(String message){ return this.messageText;}
 
     public String getMessageUser() {
         return messageUser;

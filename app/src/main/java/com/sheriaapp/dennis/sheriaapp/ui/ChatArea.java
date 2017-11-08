@@ -4,10 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,9 +35,9 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
     private ChatMessage chatMessage;
     private MessageAdapter messageAdapter;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    @Bind(R.id.fab)
-    Button fab;
-    @Bind(R.id.input) EditText userInput;
+    @Bind(R.id.btn_send)
+    ImageButton fab;
+    @Bind(R.id.messageInput) EditText userInput;
     @Bind(R.id.list_of_messages)
     ListView messageListView;
 
@@ -61,13 +62,13 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                 .child(uid);
         /* MessageAdapter is the custom adapter which makes it easier to set the ListView*/
         messageAdapter = new MessageAdapter(ChatArea.this, ChatMessage.class, R.layout.list_item, query, this);
-
         messageListView.setAdapter(messageAdapter);
+
     }
 
     @Override
     public void onClick(View view) {
-        String message = userInput.getText().toString();
+        final String message = userInput.getText().toString();
         if (!message.equals("")) { // If statement ensures a message doesn't go blank
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
@@ -94,7 +95,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                     .inputText(conversation)
                     .build();
             final FetchChatService watsonService = new FetchChatService();
-            final TextView messageText = findViewById(R.id.message_text);
+            final TextView messageText = findViewById(R.id.message_user);
             watsonService.watsonConversationService.message(Constants.SHERIAWORKSPACE, request)
                     .enqueue(new ServiceCallback<MessageResponse>() {
                         @Override
@@ -116,6 +117,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+
                                     messageText.setText(outputText);
                                 }
                             });
@@ -123,14 +125,9 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
 
                         @Override
                         public void onFailure(Exception e) {
-                            final TextView messageText = findViewById(R.id.message_text);
-
-                            String myMessage = "This service is not available now";
-
-                            messageText.setText(myMessage);
+                            Toast.makeText(getApplicationContext(), "Cannot connect to the internet", Toast.LENGTH_SHORT).show();
                         }
                     });
         }
     }
 }
-
