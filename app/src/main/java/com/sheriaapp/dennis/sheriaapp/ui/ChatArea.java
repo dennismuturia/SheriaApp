@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
+import com.github.library.bubbleview.BubbleTextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -96,7 +97,7 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                     .inputText(conversation)
                     .build();
             final FetchChatService watsonService = new FetchChatService();
-            final TextView messageText = findViewById(R.id.message_text);
+            final TextView messageText = (BubbleTextView)findViewById(R.id.message_text);
             watsonService.watsonConversationService.message(Constants.SHERIAWORKSPACE, request)
                     .enqueue(new ServiceCallback<MessageResponse>() {
                         @Override
@@ -118,14 +119,14 @@ public class ChatArea extends AppCompatActivity implements View.OnClickListener{
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    messageText.setText(outputText);
+                                    Log.d(String.valueOf(outputText), "myOutput");
+                                    //messageText.setText(outputText);
                                 }
                             });
                         }
 
                         @Override
                         public void onFailure(Exception e) {
-                            spinner = findViewById(R.id.progressBar1);
                         }
                     });
         }
