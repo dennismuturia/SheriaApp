@@ -34,7 +34,7 @@
             android:padding="10dp"
             android:text="Hello BubbleTextVew"
             android:textColor="@android:color/white"
-            app:bubbleColor="#7EC0EE" />
+            app:bubbleColor="@color/maincolor" />
 
         <RelativeLayout
             android:layout_width="match_parent"
