@@ -49,14 +49,10 @@ public class Land extends AppCompatActivity implements AHBottomNavigation.OnTabS
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, landAquistion).commit();
         }
         if (position==1){
-            LandRights landRights = new LandRights();
-            getSupportFragmentManager().beginTransaction().replace(R.id.content_id,landRights).commit();
-        }
-        if (position==2){
             LandRightsTenants landRightsTenants = new LandRightsTenants();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,landRightsTenants).commit();
         }
-        if (position==3){
+        if (position==2){
             LandTitleAquisition landTitleAquisition = new LandTitleAquisition();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, landTitleAquisition).commit();
         }
