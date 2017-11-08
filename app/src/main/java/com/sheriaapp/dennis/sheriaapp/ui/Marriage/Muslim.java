@@ -48,7 +48,7 @@ public class Muslim extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_muslim, container, false);
 
-        featuresListView =  rootView.findViewById(R.id.contractService);
+        featuresListView =  rootView.findViewById(R.id.features);
 
         mFeatures= FirebaseDatabase
                 .getInstance()
@@ -76,7 +76,7 @@ public class Muslim extends Fragment {
             }
         });
 
-        procedureListView =  rootView.findViewById(R.id.contractService);
+        procedureListView =  rootView.findViewById(R.id.procedure);
 
         mProcedure = FirebaseDatabase
                 .getInstance()
@@ -104,7 +104,7 @@ public class Muslim extends Fragment {
             }
         });
 
-        requirementsListView =  rootView.findViewById(R.id.contractService);
+        requirementsListView =  rootView.findViewById(R.id.muslim_requirements);
 
         mRequirements = FirebaseDatabase
                 .getInstance()

@@ -14,13 +14,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="Ceremony"
+            android:text="Features of Marriage"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <ListView
-            android:id="@+id/ceremony"
+            android:id="@+id/features"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -31,13 +31,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="Registration"
+            android:text="Marriage Requirements"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <ListView
-            android:id="@+id/register"
+            android:id="@+id/muslim_requirements"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -46,61 +46,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="Marriage Age"
+            android:text="Marriage Procedure"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <ListView
-            android:id="@+id/age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:dividerHeight="2dp">
-        </ListView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="Witnesses"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <ListView
-            android:id="@+id/witness"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:dividerHeight="2dp">
-        </ListView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="Marriage Certificate"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <ListView
-            android:id="@+id/certificate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:dividerHeight="2dp">
-        </ListView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="Requirements"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <ListView
-            android:id="@+id/requirements"
+            android:id="@+id/procedure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
